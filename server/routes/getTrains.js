@@ -79,7 +79,6 @@ router.get("/getRoute", async (req, res) => {
       res.json(json);
       return;
     }
-    URL_Train = `https://erail.in/data.aspx?Action=TRAINROUTE&Password=2012&Data1=${json["data"]["train_id"]}&Data2=0&Cache=true`;
     response = await fetch(URL_Train);
     data = await response.text();
     json = prettify.GetRoute(data);
@@ -91,7 +90,6 @@ router.get("/getRoute", async (req, res) => {
 router.get("/stationLive", async (req, resp) => {
   const code = req.query.code;
   try {
-    let URL_Train = `https://erail.in/station-live/${code}?DataSource=0&Language=0&Cache=true`;
     let response = await fetch(URL_Train);
     let data = await response.text();
     const $ = cheerio.load(data);
