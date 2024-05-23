@@ -1,0 +1,25 @@
+.background {
+    position: relative; /* Make sure the container is positioned */
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.background img {
+    width: 99%;
+    /* height: 100%; */
+    object-fit: contain;
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+.background::after {
+    content: ''; /* Create a pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.545); /* Semi-transparent black color */
+}
